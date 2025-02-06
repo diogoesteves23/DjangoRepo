@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>App index Page</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>App results</title>
+    </head>
+    <body>
+    {% if latest_question_list %}
+        <ul>
+        {% for question in latest_question_list %}
+           <li><a href="{% url 'app:detail' question.id %}">{{ question.question_text }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No app are available.</p>
+    {% endif %}
+    </body>
+    </html>
+</body>
+</html>
